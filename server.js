@@ -13,12 +13,7 @@ app.use(express.json());
 // Conectar ao banco
 connectDB();
 
-// Rota de teste
-app.get('/', (req, res) => {
-  res.send('API de Usuários com Express e Mongoose está funcionando!');
-});
-
-// Rotas de usuários
+// Rotas
 app.use('/creditos', userRoutes);
 
 // Iniciar servidor
