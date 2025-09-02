@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Simulação de Crédito</title>
-    <link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consulta de Créditos</title>
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-    <%- include('partials/header') %>
+  <div class="container">
+    <h1>Verifique seus Créditos Disponíveis</h1>
+    <form action="/creditos" method="POST" class="form">
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input type="text" name="name" id="name" required />
+      </div>
 
-    <h2>Preencha os dados do cliente:</h2>
-    <form action="/creditos" method="POST">
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome" required><br><br>
+      <div class="form-group">
+        <label for="age">Idade</label>
+        <input type="number" name="age" id="age" min="18" required />
+      </div>
 
-        <label for="idade">Idade:</label>
-        <input type="number" name="idade" required><br><br>
+      <div class="form-group">
+        <label for="income">Renda Mensal</label>
+        <input type="number" name="income" id="income" step="0.01" required />
+      </div>
 
-        <label for="salario">Salário:</label>
-        <input type="number" name="salario" required><br><br>
+      <div class="form-group">
+        <label for="location">Localização</label>
+        <input type="text" name="location" id="location" placeholder="Ex: Porto Alegre" required />
+      </div>
 
-        <label for="cpf">CPF:</label>
-        <input type="text" name="cpf" required><br><br>
+      <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input type="text" name="cpf" id="cpf" maxlength="11" required />
+      </div>
 
-        <label for="localizacao">Localização:</label>
-        <input type="text" name="localizacao" required><br><br>
-
-        <button type="submit">Simular Crédito</button>
+      <button type="submit" class="btn">Consultar Créditos</button>
     </form>
-
-    <%- include('partials/footer') %>
+  </div>
 </body>
 </html>

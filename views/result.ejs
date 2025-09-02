@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado da Simulação</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <h2>Resultado da Simulação</h2>
+    <p><strong>Cliente:</strong> <%= nome %></p>
+
+    <% if (creditosDisponiveis.length > 0) { %>
+        <h3>Créditos Disponíveis:</h3>
+        <ul>
+            <% creditosDisponiveis.forEach(credito => { %>
+                <li><strong><%= credito.tipo %></strong> - Taxa: <%= credito.taxa %></li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <p>Infelizmente, o cliente não se qualifica para nenhuma modalidade de crédito.</p>
+    <% } %>
+
+    <a href="/">Voltar</a>
+
+    <%- include('partials/footer') %>
+</body>
+</html>
